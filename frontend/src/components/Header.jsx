@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const navigate = useNavigate()
 
   const navigationItems = [
     { label: 'Home', path: '/' },
@@ -11,8 +13,8 @@ const Header = () => {
     { label: 'Contact', path: '/contact' }
   ]
 
-  const IconButton = ({ icon, badge }) => (
-    <button className="btn btn-ghost btn-circle">
+  const IconButton = ({ icon, badge, onClick }) => (
+    <button className="btn btn-ghost btn-circle" onClick={onClick}>
       <div className={badge ? 'indicator' : ''}>
         {icon}
         {badge && <span className="badge badge-sm indicator-item bg-yellow-400 border-none">{badge}</span>}
@@ -51,6 +53,10 @@ const Header = () => {
     </ul>
   )
 
+  const handleUserClick = () => {
+    navigate('/login')
+  }
+
   return (
     <>
       <div className="navbar bg-base-100 shadow-sm">
@@ -74,7 +80,7 @@ const Header = () => {
           <IconButton icon={icons.search} />
           <IconButton icon={icons.heart} />
           <IconButton icon={icons.cart} badge="0" />
-          <IconButton icon={icons.user} />
+          <IconButton icon={icons.user} onClick={handleUserClick} />
         </div>
       </div>
 
@@ -86,7 +92,7 @@ const Header = () => {
               <IconButton icon={icons.search} />
               <IconButton icon={icons.heart} />
               <IconButton icon={icons.cart} badge="0" />
-              <IconButton icon={icons.user} />
+              <IconButton icon={icons.user} onClick={handleUserClick} />
             </div>
           </div>
         </div>
