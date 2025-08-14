@@ -77,7 +77,7 @@ const RegisterForm = ({ setIsLogin }) => {
 
       <button
         type="submit"
-        className="w-full bg-teal-600 text-white py-3 rounded-full font-semibold hover:bg-teal-700 transition"
+        className="w-full bg-gradient-to-r from-[#FFB800] to-red-700 text-white py-3 rounded-full font-semibold hover:bg-teal-700 transition"
       >
         Register
       </button>

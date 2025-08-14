@@ -44,7 +44,7 @@ const Auth = () => {
             </div>
 
             {/* Right Side (Illustration for Register) */}
-            <div className="flex flex-col justify-center items-center text-center w-full p-14 bg-blue-900 rounded-bl-4xl rounded-tl-4xl text-white">
+            <div className="flex flex-col justify-center items-center text-center w-full p-14 bg-teal-600  rounded-bl-4xl rounded-tl-4xl text-white">
               <h2 className="text-4xl font-bold mb-6">Join Us!</h2>
               <img
                 src="/src/assets/register-illustration.svg"
